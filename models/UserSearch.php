@@ -92,8 +92,8 @@ class UserSearch extends Model
         if (!($this->load($params) && $this->validate())) {
             return $dataProvider;
         }
-
-        $table_name = $query->modelClass::tableName();
+        
+        $table_name = $query->modelClass->tableName();
 
         if ($this->created_at !== null) {
             $date = strtotime($this->created_at);
